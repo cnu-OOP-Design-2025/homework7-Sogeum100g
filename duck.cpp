@@ -1,22 +1,51 @@
 #include "duck.h"
 
 /* TODO */
-void Duck::performFly(){}
+void Duck::performFly(){
+    flyBehavior->fly();
+}
 /* TODO */
-void Duck::performQuack(){}
+void Duck::performQuack(){
+    quackBehavior->quack();
+}
 /* TODO */
-void Duck::setFlyBehavior(FlyBehavior* fb){}
+void Duck::setFlyBehavior(FlyBehavior* fb){
+    flyBehavior = fb;
+}
 /* TODO */
-void Duck::setQuackBehavior(QuackBehavior* qb){}
+void Duck::setQuackBehavior(QuackBehavior* qb){
+    quackBehavior = qb;
+}
 
 
 /* TODO */
-MallardDuck::MallardDuck() {}
+// 기본 행동: FlyWithWings, Quack
+MallardDuck::MallardDuck() {
+    setFlyBehavior(new FlyWithWings());
+    setQuackBehavior(new Quack());
+}
 /* TODO */
-RedheadDuck::RedheadDuck() {}
+// 기본 행동: FlyWithWings, Quack
+RedheadDuck::RedheadDuck() {
+    setFlyBehavior(new FlyWithWings());
+    setQuackBehavior(new Quack());
+}
 /* TODO */
-RubberDuck::RubberDuck() {}
+// 기본 행동: FlyNoWay, Squeak
+RubberDuck::RubberDuck() {
+    setFlyBehavior(new FlyNoWay());
+    setQuackBehavior(new Squeak());
+}
 /* TODO */
-DecoyDuck::DecoyDuck() {}
+// 기본 행동: FlyNoWay, MuteQuack
+DecoyDuck::DecoyDuck() {
+    setFlyBehavior(new FlyNoWay());
+    setQuackBehavior(new MuteQuack());
+}
 /* TODO */
-ModelDuck::ModelDuck() {}
+// 기본 행동: FlyNoWay, MuteQuack
+// 동적으로 행동 변경 테스트
+ModelDuck::ModelDuck() {
+    setFlyBehavior(new FlyNoWay());
+    setQuackBehavior(new MuteQuack());
+}
