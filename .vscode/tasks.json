@@ -7,11 +7,13 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
+                // 파일명 각각 지정
                 "main.cpp", "duck.cpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
+                // 파일 디렉터리 경로로 지정
                 "cwd": "${fileDirname}"
             },
             "problemMatcher": [
